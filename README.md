@@ -5,4 +5,4 @@
 
 ### Resources 
 
-* Chatgbt
+* Chatgbt https://openai.com
