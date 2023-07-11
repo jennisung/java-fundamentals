@@ -62,16 +62,21 @@ public class Main {
   }
   
   // Write a method clock that uses Java’s built-in LocalDateTime object to constantly print out the current time to the console, second by second. The program should run until someone manually kills it with CTRL-C or presses the “stop” button in their IDE. Each time should only be printed once. Your program should detect when the seconds increase and only print something out when the timestamp changes.
-  
   public static void clock() {
-    LocalDateTime pastTime = null;
+  LocalDateTime pastTime = null;
 
     while (true) {
-      LocalDateTime now = LocalDateTime.now();
-      if (now.isAfter(pastTime)) {
-        System.out.println(now.format(DateTimeFormatter.ofPattern("HH:mm:ss")));
-        pastTime = now;
-      }
+    LocalDateTime now = LocalDateTime.now();
+    int hour = now.getHour();
+    int minute = now.getMinute();
+    int second = now.getSecond();
+    String currentTime = String.format("%02d:%02d:%02d", hour, minute, second);
+
+    if (pastTime == null || !currentTime.equals(pastTime)) {
+      System.out.println(currentTime);
+      pastTime = now;
     }
   }
+}
+
 }
