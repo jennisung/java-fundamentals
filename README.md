@@ -2,10 +2,10 @@
 
 
 ## Lab 01: Java Primitives and Control Flow
-
-### Resources 
 * Pluralize
 * Flip coin
 * Command Line Clock
 
+
+### Resources 
 * Chatgbt https://openai.com
