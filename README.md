@@ -11,6 +11,11 @@
 * Calculating Averages
 * Array of arrays
 
+## Lab 03:Maps, File I/O, and Testing
+* weather function and tests
+* tallying function and tests
+* linter application and associated tests to catch all errors
+
 
 ### Resources 
 * Chatgbt https://openai.com
