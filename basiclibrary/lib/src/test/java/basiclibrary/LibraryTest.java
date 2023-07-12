@@ -21,5 +21,17 @@ class LibraryTest {
         int[] secondTest = {1, 1, 2, 4, 5};
         assertTrue(library.hasDuplicates(secondTest), "Duplicates in Array");
     }
+
+    @Test void testCalcAverageMethod() {
+        Library library = new Library();
+        int[] testArray = {1, 2, 3, 4, 5};
+
+        double expectedAvg = 3;
+        double actualAvg = library.calcAverage(testArray);
+
+        assertEquals(expectedAvg, actualAvg, "Average match");
+    }
+
+
 }
 
