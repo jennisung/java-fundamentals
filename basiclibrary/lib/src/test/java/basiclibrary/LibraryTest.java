@@ -7,13 +7,17 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class LibraryTest {
-    @Test void testRollMethod() {
+    @Test
+    void diceRollTest() {
         Library library = new Library();
         int[] rolls = library.roll(4);
         assertEquals(4, rolls.length, "Array length should be 4");
     }
 
-    @Test void testDuplicatesMethod() {
+
+    @Test
+    void duplicateTest() {
+
         Library library = new Library();
         int[] firstTest = {1, 2, 3, 4, 5};
         assertFalse(library.hasDuplicates(firstTest), "No duplicates");
@@ -22,7 +26,10 @@ class LibraryTest {
         assertTrue(library.hasDuplicates(secondTest), "Duplicates in Array");
     }
 
-    @Test void testCalcAverageMethod() {
+
+    @Test
+    void calcAvgTest() {
+
         Library library = new Library();
         int[] testArray = {1, 2, 3, 4, 5};
 
@@ -32,6 +39,19 @@ class LibraryTest {
         assertEquals(expectedAvg, actualAvg, "Average match");
     }
 
-
+//    @Test void lowAvgTest() {
+//        Library n = new Library();
+//
+//        int[][] weeklyMonthTemperatures = {
+//
+//                {66, 64, 58, 65, 71, 57, 60},
+//                {57, 65, 65, 70, 72, 65, 51},
+//                {55, 54, 60, 53, 59, 57, 61},
+//                {65, 56, 55, 52, 55, 62, 57}
+//        };
+//
+//        int[] lowestAvgArray = {57, 65, 65, 70, 72, 65, 51};
+//        assertArrayEquals(lowestAvgArray, n.lowestAvg(weeklyMonthTemperatures), "Lowest average");
+//    }
 }
 
