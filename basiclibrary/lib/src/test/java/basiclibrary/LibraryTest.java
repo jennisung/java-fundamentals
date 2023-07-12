@@ -7,8 +7,10 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class LibraryTest {
-    @Test void someLibraryMethodReturnsTrue() {
-        Library classUnderTest = new Library();
-        assertTrue(classUnderTest.someLibraryMethod(), "someLibraryMethod should return 'true'");
+    @Test
+    void testRollMethod() {
+        Library library = new Library();
+        int[] rolls = library.roll(5);
+        assertEquals(5, rolls.length, "Array length should be 5");
     }
 }
