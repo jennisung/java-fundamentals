@@ -6,16 +6,32 @@
 package basiclibrary;
 
 import java.util.Random;
+
+import java.util.HashSet;
+
 public class Library {
+    // Dice Rolling
     public int[] roll(int nums) {
         int[] rolls = new int[nums];
         Random random = new Random();
 
         for (int i = 0; i < nums; i++) {
-
             rolls[i] = random.nextInt(6) + 1;
         }
         return rolls;
+    }
 
+    // Contains Duplicates
+    public boolean hasDuplicates(int[] arr) {
+        HashSet<Integer> set = new HashSet<>();
+
+        for (int numbers : arr) {
+            if (!set.add(numbers)) {
+
+                return true;
+            }
+        }
+        return false;
     }
 }
+

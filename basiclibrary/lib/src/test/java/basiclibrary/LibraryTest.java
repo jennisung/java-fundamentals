@@ -7,10 +7,19 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class LibraryTest {
-    @Test
-    void testRollMethod() {
+    @Test void testRollMethod() {
         Library library = new Library();
-        int[] rolls = library.roll(5);
-        assertEquals(5, rolls.length, "Array length should be 5");
+        int[] rolls = library.roll(4);
+        assertEquals(4, rolls.length, "Array length should be 4");
+    }
+
+    @Test void testDuplicatesMethod() {
+        Library library = new Library();
+        int[] firstTest = {1, 2, 3, 4, 5};
+        assertFalse(library.hasDuplicates(firstTest), "No duplicates");
+
+        int[] secondTest = {1, 1, 2, 4, 5};
+        assertTrue(library.hasDuplicates(secondTest), "Duplicates in Array");
     }
 }
+
