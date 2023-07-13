@@ -5,14 +5,16 @@
 package linter;
 
 import java.io.IOException;
-import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+
+import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) throws IOException {
 
         Path filePath = Paths.get("src/main/resources/gates.js");
+
         String message = checkFile(filePath);
         System.out.println(message);
     }
@@ -20,15 +22,22 @@ public class App {
     public static String checkFile(Path filePath) throws IOException {
         StringBuilder message = new StringBuilder();
 
-        for (String lineCheck : Files.readAllLines(filePath)) {
-            if (!lineCheck.isEmpty() && !lineCheck.endsWith("{") && !lineCheck.endsWith("}")  && !lineCheck.contains("if") && !lineCheck.contains("else") && !lineCheck.endsWith(";")) {
-                message.append("Missing semicolon at ").append(lineCheck).append(System.lineSeparator());
+        try (Scanner scanner = new Scanner(filePath)) {
+            int lineOfCode = 1;
+
+            while (scanner.hasNextLine()) {
+                String lineCheck = scanner.nextLine();
+                if (!lineCheck.isEmpty() && !lineCheck.endsWith("{") && !lineCheck.endsWith("}") && !lineCheck.contains("if") && !lineCheck.contains("else") && !lineCheck.endsWith(";")) {
+                    message.append("Missing semicolon at line ").append(lineOfCode).append(": ").append(lineCheck).append(System.lineSeparator());
+                }
+                lineOfCode++;
             }
         }
 
         return message.toString();
     }
 }
+
 
 
 
