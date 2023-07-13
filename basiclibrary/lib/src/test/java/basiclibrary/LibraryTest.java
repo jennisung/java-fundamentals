@@ -6,6 +6,8 @@ package basiclibrary;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
+
+
 class LibraryTest {
     @Test
     void diceRollTest() {
@@ -39,11 +41,11 @@ class LibraryTest {
         assertEquals(expectedAvg, actualAvg, "Average match");
     }
 
-//    @Test void lowAvgTest() {
-//        Library n = new Library();
+//    @Test
+//    void lowAvgTest() {
+//        Library library = new Library();
 //
 //        int[][] weeklyMonthTemperatures = {
-//
 //                {66, 64, 58, 65, 71, 57, 60},
 //                {57, 65, 65, 70, 72, 65, 51},
 //                {55, 54, 60, 53, 59, 57, 61},
@@ -51,7 +53,35 @@ class LibraryTest {
 //        };
 //
 //        int[] lowestAvgArray = {57, 65, 65, 70, 72, 65, 51};
-//        assertArrayEquals(lowestAvgArray, n.lowestAvg(weeklyMonthTemperatures), "Lowest average");
+//        int[] actualOutput = library.lowestAvg(weeklyMonthTemperatures);
+//
+//        assertArrayEquals(lowestAvgArray, actualOutput, "Lowest average");
 //    }
-}
 
+
+
+    @Test
+    void analyzeWeatherTest() {
+
+        Library library = new Library();
+        int[][] weatherTemps = {
+                {66, 64, 58, 65, 71, 57, 60},
+                {57, 65, 65, 70, 72, 65, 51},
+                {55, 54, 60, 53, 59, 57, 61},
+                {65, 56, 55, 52, 55, 62, 57}
+        };
+
+
+        String correctWeather = "High: 72\n" +
+                "Low: 51\n" +
+                "No temperature seen during month: 63\n" +
+                "No temperature seen during month: 67\n" +
+                "No temperature seen during month: 68\n" +
+                "No temperature seen during month: 69\n";
+
+        String actualOutput = library.analyzeWeather(weatherTemps);
+
+        assertEquals(correctWeather, actualOutput, "Weather match");
+    }
+
+}
