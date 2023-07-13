@@ -94,6 +94,30 @@ public class Library {
         return weatherData.toString();
     }
 
+    //tally
+
+    public String tally(List<String> votes) {
+
+        Map<String, Integer> voteCountPerCandidate = new HashMap<>();
+
+        for (String candidate : votes) {
+            voteCountPerCandidate.put(candidate, voteCountPerCandidate.getOrDefault(candidate, 0) + 1);
+        }
+
+        String winningCandidate = "";
+        int maxVotes = 0;
+        for (Map.Entry<String, Integer> tally : voteCountPerCandidate.entrySet()) {
+            String candidate = tally.getKey();
+            int votesCount = tally.getValue();
+            if (votesCount > maxVotes) {
+                maxVotes = votesCount;
+                winningCandidate = candidate;
+            }
+        }
+
+        return winningCandidate;
+
+    }
 
 }
 
