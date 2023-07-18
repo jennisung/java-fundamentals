@@ -10,7 +10,7 @@ public class RestaurantTest {
         Restaurant restaurant = new Restaurant("momofuku", "$$$$$");
 
 
-        Review first = new Review("Taste greats!", "Tom Cuise", 3);
+        Review first = new Review("Taste greats!", "Tom Cuise", 4);
         Review second = new Review("It's okay!", "Leo Decaprio", 3);
 
 //        restaurant.addReview(first);
