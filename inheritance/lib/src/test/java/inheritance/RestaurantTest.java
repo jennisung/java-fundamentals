@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class RestaurantTest {
 
-    @Test public void restaurantToString() {
+    @Test void restaurantToString() {
         Restaurant restaurant = new Restaurant("KFC", "$");
         String expectedOutput = "Restaurant{name='KFC', stars=0.0, price='$'}";
 
@@ -16,7 +16,7 @@ public class RestaurantTest {
 
     }
 
-    @Test public void reviewToString() {
+    @Test void reviewToString() {
         Review review = new Review("Good!", "Jennifer Sung", 4);
         String expectedOutput = "Review{author='Jennifer Sung', stars=4 body =Good!'}";
 
@@ -26,7 +26,7 @@ public class RestaurantTest {
         assertEquals(expectedOutput, review.toString());
     }
 
-    @Test public void associationReview() {
+    @Test void associationReview() {
         Restaurant restaurant = new Restaurant("nobu", "$$$");
         Review review = new Review("Delicious!", "Alice", 5);
 
@@ -40,7 +40,7 @@ public class RestaurantTest {
 
 
     @Test
-    public void testAddReview() {
+    public testAddReview() {
         Restaurant restaurant = new Restaurant("momofuku", "$$$$$");
 
 
@@ -64,7 +64,7 @@ public class RestaurantTest {
 
 
 
-//    @Test public void reviewTest() {
+//    @Test void reviewTest() {
 //        Review review = new Review("Delicious food!", "Jennifer Sung", 4);
 //        String expectedOutput = "Review{" +
 //                "body='Delicious food!', " +
@@ -74,3 +74,4 @@ public class RestaurantTest {
 //    }
 //}
 }
+
