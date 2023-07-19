@@ -5,17 +5,17 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class ShopTest {
-    public static void main(String[] args) {
-        Shop testShop = new Shop("wholefoods", "Test", "$");
+    @Test void shopReview() {
+        Shop shop = new Shop("Stores", "Test", "$");
+        Review wholeFoods = new Review("Good!", "Jenny", 4);
+        Review traderJoes = new Review("Great!", "James", 5);
 
-        Review first = new Review("Good!", "Jennifer", 5);
-        Review second = new Review("Bad.", "James", 3);
+        shop.addReview(wholeFoods);
+        shop.addReview(traderJoes);
 
-        shop.addReview(first);
-        shop.addReview(second);
+        System.out.println(shop);
+        System.out.println("Stars: " + shop.getStars());
 
-        System.out.println(testShop);
-
-        System.out.println("Review: " + shop.getStars());
+        assertEquals(4.5, shop.getStars());
     }
 }

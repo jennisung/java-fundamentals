@@ -16,4 +16,19 @@ public class Shop extends Business {
                 ", price='" + getPrice() + '\'' +
                 '}';
     }
+
+    // getReviews and setStars are in the Business class
+
+    public void addReview(Review review) {
+        super.getReviews().add(review);
+
+        int total = 0;
+        for (Review shopReview : super.getReviews()) {
+            total += shopReview.getNumberOfStars();
+        }
+
+        super.setStars((float) total / super.getReviews().size());
+    }
 }
+
+

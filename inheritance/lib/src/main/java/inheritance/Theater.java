@@ -30,7 +30,22 @@ public class Theater extends Business {
                 ", movies=" + movies +
                 '}';
     }
+
+    // getReviews and setStars are in the Business class
+
+    public void addReview(Review review) {
+        super.getReviews().add(review);
+
+        int total = 0;
+        for (Review theaterReview : super.getReviews()) {
+            total += theaterReview.getNumberOfStars();
+        }
+
+        super.setStars((float) total / super.getReviews().size());
+    }
+
 }
+
 
 
 
