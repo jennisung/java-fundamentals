@@ -18,3 +18,18 @@ The architecture of the library includes two main classes: Restaurant and Review
 First, it adds the first review to the restaurant and checks if the restaurant's star rating becomes 3.5. Then, it adds the second review and again checks if the restaurant's star rating remains 3.5 (which is the average of two 3-star reviews).
 
 The test uses assertEquals() to compare the expected result (3.5) with the actual restaurant's rating. If the two values match, the test passes; otherwise, it fails and indicates there might be a problem with the addReview() method.
+
+
+## Lab 07: Composition and Inheritance, Part 2
+
+### Overview of the Architecture:
+* Shop Class: The Shop class extends the Business class. It has a constructor to set the shop's name, description, and price using the super keyword to call the parent class's constructor. It also has a toString() method that is overridden to provide a string representation of the shop.
+* Theater Class: The Theater class extends the Business class. The Theater class has methods to add and remove movies from the list, and the toString() method is overridden to include the list of movies.
+* Business Class: The Business class is the parent class that contains common properties and methods for shops and theaters. It has fields for name, description, price, and a list of Review objects. It also has methods to add and retrieve reviews.
+* Review Class: The Review class represents a basic review with fields for body for review, author of the reviewer, and stars for the rating.
+
+### Tests
+* To test, the unit tests is  JUnit Jupiter.
+* * Each class have a separate test classes to verify the functionality of the corresponding classes.
+
+
