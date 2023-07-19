@@ -4,6 +4,7 @@ public class Review {
     private String body;
     private int numberOfStars;
     private String author;
+    private String movie;
 
     public Review(String body, String author, int numberOfStars) {
         this.body = body;
@@ -23,12 +24,21 @@ public class Review {
         return numberOfStars;
     }
 
+    public String getMovie() {
+        return movie;
+    }
+
+    public void setMovie(String movie) {
+        this.movie = movie;
+    }
+
     @Override
     public String toString() {
         return "Review{" +
                 "author='" + author + '\'' +
                 ", stars=" + numberOfStars +
                 " body =" + body + '\'' +
+                ", movie='" + movie + '\'' +
                 '}';
     }
 }
