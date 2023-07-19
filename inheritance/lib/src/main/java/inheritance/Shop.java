@@ -1,5 +1,7 @@
 package inheritance;
 
+import java.util.ArrayList;
+import java.util.List;
 public class Shop {
     private String name;
     private String description;
