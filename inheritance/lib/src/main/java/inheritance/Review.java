@@ -1,18 +1,18 @@
 package inheritance;
 
 public class Review {
-    private String text;
+    private String body;
     private int numberOfStars;
     private String author;
 
-    public Review(String text, String author, int numberOfStars) {
-        this.text = text;
+    public Review(String body, String author, int numberOfStars) {
+        this.body = body;
         this.numberOfStars = numberOfStars;
         this.author = author;
     }
 
-    public String getText() {
-        return text;
+    public String getBody() {
+        return body;
     }
 
     public String getAuthor() {
@@ -28,7 +28,7 @@ public class Review {
         return "Review{" +
                 "author='" + author + '\'' +
                 ", stars=" + numberOfStars +
-                " text =" + text
+                " body =" + body + '\'' +
                 '}';
     }
 }
